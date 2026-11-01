@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T00:00:00Z",
+  "title": "Design System: SAT Math Lines",
+  "extensions": {
+    "colorMeta": {
+      "midnight-enamel": { "role": "neutral", "displayName": "Midnight Enamel", "canonical": "#0d1b3d", "tonalRamp": ["#050b1a", "#0d1b3d", "#12254f", "#1a3166", "#2a4585", "#5a6a8c", "#b4c0de", "#e8edf8"] },
+      "ticket-cream": { "role": "primary", "displayName": "Ticket Cream", "canonical": "#f4f1e8", "tonalRamp": ["#6b6a62", "#8f8d83", "#b0ada1", "#cbc8bb", "#e0ddd0", "#f4f1e8", "#faf8f3", "#ffffff"] },
+      "line-algebra": { "role": "secondary", "displayName": "Scarlet Line", "canonical": "#d93a41", "tonalRamp": ["#4a1215", "#7a1f24", "#a82b31", "#d93a41", "#ff8087", "#ffa3a8", "#ffc7ca", "#ffe8e9"] },
+      "line-advanced": { "role": "secondary", "displayName": "Cobalt Line", "canonical": "#3366d9", "tonalRamp": ["#10224d", "#1b3a85", "#2850b3", "#3366d9", "#5f89e8", "#86adf5", "#b5cdf9", "#e2ebfc"] },
+      "line-data": { "role": "secondary", "displayName": "Amber Line", "canonical": "#f2a900", "tonalRamp": ["#4d3700", "#7d5a00", "#b88100", "#f2a900", "#f7c548", "#f9d578", "#fbe5aa", "#fdf4dc"] },
+      "line-geometry": { "role": "secondary", "displayName": "Signal Green Line", "canonical": "#2ca06b", "tonalRamp": ["#0e3322", "#175a3c", "#217d52", "#2ca06b", "#5fd09b", "#8ddfb7", "#bdeed3", "#e6f8ee"] },
+      "correct": { "role": "tertiary", "displayName": "Correct Green", "canonical": "#146c43", "tonalRamp": ["#082b1a", "#0e4b2e", "#146c43", "#2f9468", "#6bbf99", "#a8dcc3", "#e6f4ec", "#f3faf6"] },
+      "incorrect": { "role": "tertiary", "displayName": "Incorrect Red", "canonical": "#b3261e", "tonalRamp": ["#470e0b", "#7a1914", "#b3261e", "#d8574f", "#ea8e88", "#f4bcb8", "#fbe9e7", "#fdf5f4"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Set-complete score only." },
+      "headline": { "displayName": "Headline", "purpose": "Page headings on empty and completion states." },
+      "title": { "displayName": "Title", "purpose": "Suggested skill name, practice heading, product name." },
+      "body": { "displayName": "Body", "purpose": "Descriptions and secondary copy." },
+      "label": { "displayName": "Label", "purpose": "Line badges, count pills, hints." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "control-transition", "value": "150ms ease-out", "purpose": "Colour and border changes on buttons, choice rows and station rings." },
+      { "name": "reveal-wipe", "value": "220ms cubic-bezier(.16, 1, .3, 1)", "purpose": "Verdict banner and rationale clip-path reveal. Both disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single main action on the dark shell.",
+      "html": "<button class=\"ds-btn-primary\">Start a set of 10</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 8px; border: 2px solid transparent; font-family: inherit; font-weight: 700; font-size: 1rem; background: #f4f1e8; color: #0d1b3d; cursor: pointer; transition: background-color 150ms ease-out; } .ds-btn-primary:hover { background: #ffffff; } .ds-btn-primary:focus-visible { outline: 3px solid #f4f1e8; outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Action bar button on the porcelain question sheet.",
+      "html": "<button class=\"ds-btn-ink\">Check answer</button>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 8px; border: 2px solid transparent; font-family: inherit; font-weight: 700; font-size: 1rem; background: #0d1b3d; color: #fff; cursor: pointer; transition: background-color 150ms ease-out; } .ds-btn-ink:hover { background: #1a3166; } .ds-btn-ink:focus-visible { outline: 3px solid #0d1b3d; outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary action on the dark shell.",
+      "html": "<button class=\"ds-btn-quiet\">Review missed questions</button>",
+      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 8px; border: 2px solid #2a4585; background: transparent; color: #f4f1e8; font-family: inherit; font-weight: 700; font-size: 1rem; cursor: pointer; transition: border-color 150ms ease-out; } .ds-btn-quiet:hover { border-color: #b4c0de; } .ds-btn-quiet:focus-visible { outline: 3px solid #f4f1e8; outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Panel Card",
+      "kind": "card",
+      "refersTo": "panel-card",
+      "description": "Shell container for Next stop and Your journey, with a line badge.",
+      "html": "<section class=\"ds-card\"><h2>Next stop</h2><span class=\"ds-badge\">Algebra</span><p>Linear equations in one variable</p></section>",
+      "css": ".ds-card { background: #12254f; color: #f4f1e8; border-radius: 16px; padding: 24px; font-family: inherit; } .ds-card h2 { margin: 0 0 16px; font-size: 1.125rem; font-weight: 700; } .ds-card p { margin: 8px 0 0; font-size: 1.5rem; font-weight: 700; line-height: 1.25; } .ds-badge { display: inline-block; background: #d93a41; color: #fff; border-radius: 6px; padding: 4px 10px; font-size: 0.875rem; font-weight: 700; }"
+    },
+    {
+      "name": "Choice Row",
+      "kind": "custom",
+      "refersTo": "choice-row",
+      "description": "Lettered multiple-choice row on the porcelain sheet; shown in the selected state.",
+      "html": "<label class=\"ds-choice\"><span class=\"ds-letter\">B</span><span>Answer image</span></label>",
+      "css": ".ds-choice { display: flex; align-items: center; gap: 16px; min-height: 56px; padding: 12px 16px; border: 2px solid #0d1b3d; background: #e8edf8; border-radius: 12px; color: #0d1b3d; font-family: inherit; cursor: pointer; transition: border-color 150ms ease-out, background-color 150ms ease-out; } .ds-choice:hover { border-color: #6b7a9e; } .ds-letter { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 9999px; border: 2px solid #0d1b3d; background: #0d1b3d; color: #fff; font-weight: 700; }"
+    },
+    {
+      "name": "Answer Input",
+      "kind": "input",
+      "refersTo": "answer-input",
+      "description": "Numeric response field on the porcelain sheet.",
+      "html": "<label class=\"ds-label\">Your answer<input class=\"ds-input\" value=\"3/2\"></label>",
+      "css": ".ds-label { display: block; font-weight: 700; color: #0d1b3d; font-family: inherit; } .ds-input { display: block; margin-top: 8px; height: 56px; width: 100%; max-width: 320px; box-sizing: border-box; padding: 0 16px; border: 2px solid #c9d1e4; border-radius: 12px; background: #fff; color: #0d1b3d; font-family: inherit; font-size: 1.5rem; font-variant-numeric: tabular-nums; outline: none; } .ds-input:focus { border-color: #0d1b3d; } .ds-input:focus-visible { outline: 3px solid #0d1b3d; outline-offset: 3px; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "panel-card",
+      "description": "Top bar with product name and Map/Review tabs; Review shows the missed count.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-brand\">SAT Math Lines</span><nav><a class=\"ds-tab ds-tab-active\" href=\"#\">Map</a><a class=\"ds-tab\" href=\"#\">Review <span class=\"ds-count\">4</span></a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 32px; background: #0d1b3d; border-bottom: 1px solid #2a4585; font-family: inherit; } .ds-brand { color: #f4f1e8; font-size: 1.25rem; font-weight: 700; } .ds-nav nav { display: flex; } .ds-tab { display: inline-flex; align-items: center; gap: 8px; height: 64px; padding: 0 12px; box-sizing: border-box; border-bottom: 4px solid transparent; color: #b4c0de; font-weight: 700; text-decoration: none; } .ds-tab:hover { color: #f4f1e8; } .ds-tab:focus-visible { outline: 3px solid #f4f1e8; outline-offset: 3px; } .ds-tab-active { border-bottom-color: #f4f1e8; color: #f4f1e8; } .ds-count { background: #1a3166; color: #f4f1e8; border-radius: 9999px; padding: 2px 8px; font-size: 0.875rem; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Set Track",
+      "kind": "custom",
+      "refersTo": "line-badge",
+      "description": "The set drawn as a short line: answered stations filled, current ringed, track fading ahead.",
+      "html": "<div class=\"ds-track\"><span class=\"ds-stop ds-stop-done\"></span><span class=\"ds-seg\"></span><span class=\"ds-stop ds-stop-here\"></span><span class=\"ds-seg ds-seg-ahead\"></span><span class=\"ds-stop\"></span></div>",
+      "css": ".ds-track { display: flex; align-items: center; background: #0d1b3d; padding: 16px; } .ds-stop { box-sizing: border-box; width: 24px; height: 24px; border-radius: 9999px; border: 4px solid #3366d9; background: #0d1b3d; } .ds-stop-done { background: #3366d9; } .ds-stop-here { outline: 3px solid #f4f1e8; outline-offset: 2px; } .ds-seg { flex: 1; height: 6px; background: #3366d9; } .ds-seg-ahead { opacity: 0.35; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Midnight Transit Diagram",
+    "overview": "The app is a night-time rail map. A midnight-blue enamel shell holds everything; the four SAT Math domains are four coloured lines that converge on a central Mixed interchange; the 19 skills are stations along them. Practising is riding to the next stop. Question content, which is black-on-white imagery from the source bank, sits on porcelain-white sheets so it is never altered or tinted by the shell.\n\nDensity is calm and roomy: large touch targets, one typeface, few surfaces. Progress is told through the diagram itself (line fill, station state) and never through ring charts or stat tiles. Depth is tonal, with no shadows. Colour carries meaning only when it is a line ink or a right/wrong verdict.",
+    "keyCharacteristics": [
+      "Dark enamel shell, porcelain question sheets: two surfaces, never mixed within one panel.",
+      "Four fixed line inks identify domains everywhere a domain appears.",
+      "Stations are circles; lines bend only at 45 and 90 degrees.",
+      "One humanist sans, bold for hierarchy, tabular figures for every count.",
+      "Standard web controls with a single shared button vocabulary."
+    ],
+    "rules": [
+      { "name": "The Line Ink Rule", "body": "A domain is always shown in its own line colour, and a line colour never appears for anything else.", "section": "colors" },
+      { "name": "The Two Surfaces Rule", "body": "Shell content is cream on navy; question content is navy on porcelain. Only the shell uses muted, only the sheet uses the porcelain neutrals.", "section": "colors" },
+      { "name": "The Verdict Pair Rule", "body": "Right and wrong are never colour alone: icon plus sentence plus tint.", "section": "colors" },
+      { "name": "The Tabular Count Rule", "body": "Every number that can change (solved/total, question index, accuracy, ID) takes tabular-nums.", "section": "typography" },
+      { "name": "The Bold Step Rule", "body": "Hierarchy is regular versus bold plus size; no italics, no uppercase tracking, no second face.", "section": "typography" },
+      { "name": "The Flat Enamel Rule", "body": "Surfaces never carry shadows or glow; separation comes from tone, hairline rules, or the line-colour edge.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do colour any domain reference with its line ink, using the --on-line-N text colour on fills and --line-text-N for type on navy.",
+      "Do keep question images on pure white and blend choice images with multiply.",
+      "Do pair every verdict colour with an icon and a sentence.",
+      "Do keep one primary (cream) button per view and use quiet buttons for the rest.",
+      "Do use tabular figures for all counts and keep 44px minimum targets.",
+      "Do keep focus visible: 3px cream ring on shell, midnight on porcelain.",
+      "Do respect prefers-reduced-motion for every transition and the reveal."
+    ],
+    "donts": [
+      "Don't use progress rings, stat tiles, or dashboard cards in place of the diagram.",
+      "Don't bend lines at angles other than 45 and 90 degrees, or use non-circular station ticks.",
+      "Don't add shadows, glows, or gradients; separate surfaces by tone and hairlines.",
+      "Don't introduce a second typeface or a fifth line colour.",
+      "Don't put porcelain-sheet neutrals on the shell or shell muted text on porcelain.",
+      "Don't tint, recolour or crop question imagery."
+    ]
+  }
+}
